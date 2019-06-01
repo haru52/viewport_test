@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Viewport Test</title>
+    <link rel="stylesheet" media="all" href="main.css" />
+  </head>
+  <body>
+    <ul>
+      <li>screen.width
+        <ul>
+          <li><span id="screen-width"></span> px</li>
+          <li>ディスプレイの論理ピクセルの横幅（device-width）</li>
+        </ul>
+      </li>
+      <li>window.innerWidth
+        <ul>
+          <li><span id="inner-width"></span> px</li>
+          <li>モバイル：ズームアウト可能な最大横幅（？）</li>
+          <li>デスクトップ：Viewport の横幅（スクロールバー含）</li>
+        </ul>
+      </li>
+      <li>document.documentElement.clientWidth
+        <ul>
+          <li><span id="client-width"></span> px</li>
+          <li>モバイル：Viewport の横幅</li>
+          <li>デスクトップ：Viewport の横幅 - スクロールバーの横幅</li>
+        </ul>
+      </li>
+      <li>width range
+        <ul>
+          <li class="width-check" id="width-check-xs">200 px 以下</li>
+          <li class="width-check" id="width-check-s">201 - 375 px</li>
+          <li class="width-check" id="width-check-m">376 - 600 px</li>
+          <li class="width-check" id="width-check-l">601 - 1920 px</li>
+          <li class="width-check" id="width-check-xl">1921 px 以上</li>
+          <li>CSS メディアクエリで分岐</li>
+          <li>モバイル：Viewport の横幅（document.documentElement.clientWidth）</li>
+          <li>デスクトップ：Viewport の横幅（window.innerWidth）</li>
+        </ul>
+      </li>
+      <li>device-width range
+        <ul>
+          <li class="width-check" id="device-width-check-xs">200 px 以下</li>
+          <li class="width-check" id="device-width-check-s">201 - 375 px</li>
+          <li class="width-check" id="device-width-check-m">376 - 600 px</li>
+          <li class="width-check" id="device-width-check-l">601 - 1920 px</li>
+          <li class="width-check" id="device-width-check-xl">1921 px 以上</li>
+          <li>CSS メディアクエリで分岐</li>
+          <li>非推奨（Deprecated）</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div id="div200">width: 200px</div>
+    <div id="div375">width: 375px</div>
+    <div id="div980">width: 980px</div>
+    <div id="div1920">width: 1920px</div>
+    <div id="div2000">width: 2000px</div>
+
+    <script>
+      window.onload = () => {
+        document.getElementById('screen-width').innerText = screen.width;
+        document.getElementById('inner-width').innerText = window.innerWidth;
+        document.getElementById('client-width').innerText = document.documentElement.clientWidth;
+      }
+    </script>
+  </body>
+</html>
