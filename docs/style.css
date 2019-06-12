@@ -66,6 +66,10 @@ div {
   background-color: gray;
 }
 
+#div100vw {
+  width: 100vw;
+}
+
 #div200 {
   width: 200px;
 }

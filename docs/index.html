@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Viewport Test</title>
-    <link rel="stylesheet" media="all" href="main.css" />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <ul>
@@ -18,15 +18,15 @@
       <li>window.innerWidth
         <ul>
           <li><span id="inner-width"></span> px</li>
-          <li>モバイル：ズームアウト可能な最大横幅（？）</li>
+          <li>モバイル：viewport の横幅（？）</li>
           <li>デスクトップ：Viewport の横幅（スクロールバー含）</li>
         </ul>
       </li>
       <li>document.documentElement.clientWidth
         <ul>
           <li><span id="client-width"></span> px</li>
-          <li>モバイル：Viewport の横幅</li>
-          <li>デスクトップ：Viewport の横幅 - スクロールバーの横幅</li>
+          <li>モバイル：viewport の横幅</li>
+          <li>デスクトップ：viewport の横幅 - スクロールバーの横幅</li>
         </ul>
       </li>
       <li>width range
@@ -37,7 +37,7 @@
           <li class="width-check" id="width-check-l">601 - 1920 px</li>
           <li class="width-check" id="width-check-xl">1921 px 以上</li>
           <li>CSS メディアクエリで分岐</li>
-          <li>モバイル：Viewport の横幅（document.documentElement.clientWidth）</li>
+          <li>モバイル：viewport の横幅（document.documentElement.clientWidth）</li>
           <li>デスクトップ：Viewport の横幅（window.innerWidth）</li>
         </ul>
       </li>
@@ -54,6 +54,7 @@
       </li>
     </ul>
 
+    <div id="div100vw">width: vw100</div>
     <div id="div200">width: 200px</div>
     <div id="div375">width: 375px</div>
     <div id="div980">width: 980px</div>
